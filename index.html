@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ChatBot/3 </title>
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height:100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: paleturquoise;
+}
+.box{
+    width: 490px;
+    height: 350px;
+    box-shadow: 5px 5px 20px #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+.top{
+    width: 100%;
+    height: 80px;
+    background: cyan;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.top h1{
+    margin: 0;
+    font-size: 30px;
+    color: crimson;
+    text-align: center;
+    padding-top: 10px;
+    font-family: sans-serif;
+}
+.mid{
+    width: 100%;
+    height: 150px;
+    background: yellow;
+}
+.mid .chat{
+    width: 100%;
+}
+.mid .chat h2{
+    margin: 0;
+    font-size: 30px;
+    color: #000;
+    padding:30px 20px;
+    text-align: center;
+}
+.mid .chat p{
+    margin: 0;
+    height: 30px;
+    font-size: 28px;
+    color: blue;
+    text-align: center;
+    background-color: yellow;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+.input{
+    height:100%;
+    width: 489px;
+    overflow: hidden;
+}
+.input input{
+    width: 100%;
+    height: 110px;
+    outline: none;
+    border: none;
+    padding-left: 30px;
+    padding-top:0;
+    font-family: monospace;
+    font-size: 50px;
+    background: lime;
+}
+    </style>
+</head>
+<body>
+
+    <div class="box">
+<div style="text-align: center;" class="top">
+    <h1>CITY UNIVERSITY !</h1>
+</div>
+<div class="mid">
+    <div class="chat">
+        <h2>JAWABTA HOOS KALA SOCO</h2>
+        <p id="chatLog">Iweydii Sual?</p>
+    </div>
+</div>
+    <div class="input">
+    <input type="text" id="userBox"onkeydown="if(event.keyCode == 13){ talk() }"placeholder="Ku  Qor .... ">
+    </div>
+    </div>
+
+    <script>
+function talk(){
+    var know ={
+        "gormaa la aas aasay jamacada ":"waxa la aas aasay sanadii 2012",
+        "Meqa faculty ayad bixisan":"waxan bixinaa faculty of Engineering , faculty of sharia & law , faculty of Education , faculty of Agriculture , and etc.  ",
+        "intee":"safaraa iska aaday masuul",
+        "haye bro":"ok masuul"
+
+
+    };
+    var user = document.getElementById('userBox').value;
+    document.getElementById('chatLog').innerHTML = user + "<br>";
+    if(user in know){
+        document.getElementById('chatLog').innerHTML = know[user] + "<br>";
+    }else{
+        document.getElementById('chatLog').innerHTML = "I do not understand .";
+    }
+}
+    </script>
+</body>
+</html>
